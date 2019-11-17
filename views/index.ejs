@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title> Movie finder </title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Tomorrow&display=swap" rel="stylesheet">
+</head>
+<style>
+   *{
+       font-family: 'Tomorrow', sans-serif;
+       padding: 1%;
+       box-sizing: border-box;
+   }
+
+   .center-align{
+       background-color:azure !important; 
+       text-align: center; 
+       font-weight: 700; 
+       font-size: 5rem;
+   }
+
+   .is-in-form{
+       max-width:75%;
+       font-size: 2rem !important;
+       size: 5rem !important;
+       color: orangered !important;
+       background-color:rgba(247, 168, 247, 0.904) !important;
+   }
+
+   .is-in-form::placeholder{
+       font-size: 2rem !important;
+       color: orange !important;
+   }
+
+   .button{
+       font-size: 2rem !important;
+   }
+</style>
+<body>
+    
+   <h1 style="background-color:darkseagreen; text-align: center; font-weight: 900; font-size: 10rem;"> Movie Finder</h1>
+<h1 style="background-color: honeydew; text-align: center; font-weight: 700; font-size: 5rem;"> Search Movies below </h1>
+
+    
+<div class="center-align">
+    <form action="/result" method="GET">
+    <input type="text" class="input is-rounded is-medium is-primary is-focused is-in-form" name="title" placeholder="Title of the movie" required>
+    <button class="button is-rounded is-medium is-primary"> Search</button>
+    </form>
+</div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+</body>
+
+</html>

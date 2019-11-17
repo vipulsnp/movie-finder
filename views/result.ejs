@@ -1,0 +1,65 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
+
+<link href="https://fonts.googleapis.com/css?family=Tomorrow&display=swap" rel="stylesheet">
+
+<style>
+        *{
+            font-family: 'Tomorrow', sans-serif;
+            box-sizing: border-box;
+            padding: 1%;
+        }
+
+        .mov-res0
+        {
+            background-color:azure !important; 
+            text-align: center; 
+            font-weight: 500; 
+            font-size: 3rem;
+        }
+
+        .mov-res1
+        {
+            background-color:dodgerblue !important; 
+            text-align: center; 
+            font-weight: 500; 
+            font-size: 3rem;
+        }
+
+        .poster-image{
+           height: 50% !important;
+        }
+
+</style>
+<% var i=0; %>
+
+<h1 style="background-color:darkseagreen; text-align: center; font-weight: 900; font-size: 8rem;">Results for <em><%= title %></em> </h1>
+<% data["Search"].forEach(function(movie){%>  
+
+<div>
+    <h3 class="mov-res<%=i%>">
+        <li> <strong><%= movie["Title"] %></strong> - <%= movie["Year"] %>
+    
+        </li>
+
+        <!-- checking if the image url exists -->
+    
+
+<% if(movie["Poster"]!="N/A") {%>
+            <!-- showing the image-->
+        <img class="poster-image" src="<%= movie["Poster"] %>"> <%}
+        
+        else
+        {%>
+        <img class="poster-image" src="images/nf404.jpg"><%}%>
+
+
+    </h3>
+    </div>
+    
+<%i=i+1;
+    if(i==2)
+    i=0;})%>
+<div class="mov-res<%=i%>">
+<a class="button is-large is-rounded is-info is-success" href="/"> Search Again</a>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
